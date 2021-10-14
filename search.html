@@ -22,7 +22,7 @@
 
     <p id="distance" style="font-family:'Times New Roman', Times, serif;color: rgb(7, 253, 171);font-size: larger;">Distance is unknown</p>
 
-
+    <button onclick="new_game()">reset</button>
   
   <div class="container">
     <div class="row">
@@ -68,7 +68,8 @@
 
     <script>
 
-    let ids=["img-0","img-1","img-2","img-3","img-4","img-5","img-6","img-7","img-8","img-9","img-10","img-11","img-12","img-13","img-14","img-15","img-16","img-17","img-18","img-19","img-20","img-21","img-22","img-23"];
+    let ids=["img-0","img-1","img-2","img-3","img-4","img-5","img-6","img-7","img-8","img-9","img-10","img-11","img-12","img-13","img-14","img-15","img-16","img-17",
+    "img-18","img-19","img-20","img-21","img-22","img-23"];
 
     var triesCount=0;
     var animalLocation=13;
@@ -119,8 +120,18 @@
     }
    return Math.max(Math.abs(d1-d2),Math.abs(d3-d4))
 }
-  
-  </script>
+function newGame() {
+            triesCount = 0
+            animalLocation = Math.floor(Math.random() * 23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for (var i = 0; i <=23; i++) {
+                if (ids[i] == ids[animalLocation])
+                    document.getElementById(ids[i]).src = "Animal.jpg"
+
+            }
+        }
+
+   </script>
 </body>
 
 </html>
