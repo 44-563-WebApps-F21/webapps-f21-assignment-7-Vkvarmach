@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Stack of Items</title>
+	<style>
+		.flex-container {
+			display: flex;
+			flex-direction: row;
+			background-color: grey;
+		}
+
+		.flex-container>div {
+			/*div children of the flex container*/
+			background-color: #f1f1f1;
+			margin: 10px;
+			padding: 20px;
+			font-size: 30px;
+		}
+
+		/* Responsive layout */
+		@media (max-width: 600px) {
+			.flex-container {
+				flex-direction: column;
+				background-color: green;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h1 style="color: green;">Vijay Kumar Chunchu builds a stack</h1>
+    <br>
+	<input id="inputElement" type="text">
+    <br>
+	<div class="flex-container" id="target"><br>
+		<div class="stack" style="color: hotpink;">row item 1</div>
+		<div class="stack" style="color: hotpink;">row item 2</div>
+		<div class="stack" style="color: hotpink;">row item 3</div>
+	</div>
+</body>
+</html>
