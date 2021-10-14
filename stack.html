@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Stack of Items</title>
+	<title>Stack.html</title>
 	<style>
 		.flex-container {
 			display: flex;
@@ -37,6 +37,46 @@
 		<div class="stack" style="color: hotpink;">row item 1</div>
 		<div class="stack" style="color: hotpink;">row item 2</div>
 		<div class="stack" style="color: hotpink;">row item 3</div>
-	</div>
-</body>
+	</div><br>
+    <h3>Press the button to push element</h3>
+	<button onclick="makeNewDiv()">Push value</button>
+	<button onclick="popItem()">Pop</button>
+	<button onclick="zap()">Zap values</button>
+
+    </body>
+    <script>
+        function makeNewDiv() {
+            
+            let element = document.createElement("div")
+            let input = document.getElementById("inputElement")
+            element.innerHTML = input.value
+            element.className = "stack"
+    
+            
+            document.getElementById('target').appendChild(element)
+        }
+        function popItem() {
+            var stackItems = document.getElementsByClassName("stack")
+            var stackLength = stackItems.length
+            if (stackLength > 0)
+                stackItems[stackLength - 1].remove()
+        }
+        function zap() {
+            var stackItems = document.getElementsByClassName("stack")
+            let input = document.getElementById("inputElement").value
+            if (stackItems != undefined && stackItems.length > 0) {
+                
+            for (let i = 0; i < stackItems.length; i++) {
+                if (stackItems[i].innerHTML == input) {
+                        
+                    var itemToBeRemoved = stackItems[i].innerHTML
+                        stackItems[i].remove()
+                        console.log(itemToBeRemoved)
+                        
+                        i--
+                }
+            }
+        }
+        }
+    </script>
 </html>
